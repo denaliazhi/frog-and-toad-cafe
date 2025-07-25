@@ -6,10 +6,10 @@ function setHeroText(text) {
     return heroText;
 }
 
-function setCtaButton(text) {
-    const ctaButton = document.createElement("button");
-    ctaButton.textContent = text;
-    return ctaButton;
+function setButton(text) {
+    const button = document.createElement("button");
+    button.textContent = text;
+    return button;
 }
 
 function setHoursTable(obj) {
@@ -43,21 +43,21 @@ function setHomePage() {
 
     // Create elements for home page
     const heroText = setHeroText("Come for a cozy cup and the very best of friends.");
-    const ctaButton = setCtaButton("Visit us: 12 Fern Lane, London WC2R 1BH");
+    const button = setButton("Visit us: 12 Fern Lane, London WC2R 1BH");
 
     const hours = {
-        Monday: "7:00 am - 5:00 pm",
-        Tuesday: "7:00 am - 5:00 pm",
-        Wednesday: "7:00 am - 5:00 pm",
-        Thursday: "7:00 am - 5:00 pm",
-        Friday: "7:00 am - 9:00 pm",
-        Saturday: "9:00 am - 9:00 pm",
+        Monday: "7:00am - 5:00pm",
+        Tuesday: "7:00am - 5:00pm",
+        Wednesday: "7:00am - 5:00pm",
+        Thursday: "7:00am - 5:00pm",
+        Friday: "7:00am - 9:00pm",
+        Saturday: "9:00am - 9:00pm",
         Sunday: "Closed",
     }
     const hoursTable = setHoursTable(hours);
 
     // Add elements to container
-    home.append(heroText, ctaButton, hoursTable);
+    home.append(heroText, button, hoursTable);
 
     // Show container as content on page
     content.appendChild(home);

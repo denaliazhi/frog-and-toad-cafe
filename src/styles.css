@@ -56,7 +56,7 @@ th, td {
 }
 
 tr:not(:last-child) {
-    border-bottom: white 1px solid;
+    border-bottom: rgba(255, 255, 255, 0.3) 1px solid;
 }
 
 th, tr td:first-child {
@@ -100,6 +100,7 @@ th, tr td:first-child {
 
 #menu p {
     font-size: 0.7rem;
+    margin-top: 0.4rem;
 }
 
 .menu-section {
