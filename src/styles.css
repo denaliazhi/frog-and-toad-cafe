@@ -5,12 +5,13 @@
 }
 
 body {
-    background: url("cafe-background.png") no-repeat center top;
+    background: url("assets/cafe-background.png") no-repeat center top;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 100vh;
 }
 
 header {
@@ -30,6 +31,18 @@ nav button {
     color: white;
     cursor: pointer;
 }
+
+
+footer {
+    margin-top: 5rem;
+    padding: 1rem 2rem;
+    background-color: #46382E;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+/* Home page styling */
 
 table {
     border-collapse: collapse;
@@ -73,11 +86,41 @@ th, tr td:first-child {
     letter-spacing: 0.025rem;  
 }
 
-footer {
-    margin-top: 5rem;
+/* Menu page styling */
+
+#menu {
+    text-align: center;
+}
+
+#menu h2 {
+    font-size: 1rem;
+    text-align: left;
+    margin: 0.5rem 0 1rem;
+}
+
+#menu p {
+    font-size: 0.7rem;
+}
+
+.menu-section {
+    background-color: rgba(93, 77, 65, .85);
     padding: 1rem 2rem;
-    background-color: #46382E;
+    margin: 2rem auto;
+    max-width: fit-content;
+}
+
+.menu-section > div {
     display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.menu-card {
+    width: 6.5rem;
+}
+
+.menu-card img {
+    width: 100%;
+    cursor: pointer;
 }
