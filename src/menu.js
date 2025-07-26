@@ -1,18 +1,7 @@
 // This code generates DOM elements for the menu page
 
+import { setTitle, setSubtitle } from "./components";
 const images = require.context("./assets", false, /\.(png|jpe?g|svg)$/);
-
-function setTitle(text) {
-    const title = document.createElement("h1");
-    title.textContent = text;
-    return title;
-}
-
-function setSubtitle(text) {
-    const subtitle = document.createElement("p");
-    subtitle.textContent = text;
-    return subtitle;
-}
 
 function setMenuSection(title, obj) {
     const section = document.createElement("div");
@@ -82,59 +71,3 @@ function setMenuPage() {
 }
 
 export default setMenuPage;
-
-
-/* <div id="menu">
-<h1>Menu</h1>
-<p>There's no rush here. Sip, snack, and stay awhile.</p>
-<div class="menu-section">
-    <h2>For sipping</h2>
-    <div>
-        <div class="menu-card">
-            <img src="assets/cappuccino.png" alt="">
-            <p>Frog's hopping capppuccino</p>
-        </div>
-        <div class="menu-card">
-            <img src="assets/chamomile.png" alt="">
-            <p>Toad's soothing chamomile</p>
-        </div>
-        <div class="menu-card">
-            <img src="assets/green-tea.png" alt="">
-            <p>Lilypad green</p>
-        </div>
-        <div class="menu-card">
-            <img src="assets/chai.png" alt="">
-            <p>Cozy cottage chai</p>
-        </div>
-        <div class="menu-card">
-            <img src="assets/earl-grey.png" alt="">
-            <p>Good day, earl grey</p>
-        </div>
-    </div>
-</div>
-<div class="menu-section">
-    <h2>For snacking</h2>
-    <div>
-        <div class="menu-card">
-            <img src="assets/herb-scone.png" alt="">
-            <p>Garden herb scone</p>
-        </div>
-        <div class="menu-card">
-            <img src="assets/mushroom-tart.png" alt="">
-            <p>Woodland mushroom tart</p>
-        </div>
-        <div class="menu-card">
-            <img src="assets/snail-bun.png" alt="">
-            <p>Chocolate swirl snail bun</p>
-        </div>
-        <div class="menu-card">
-            <img src="assets/madelines.png" alt="">
-            <p>Browned butter madeline</p>
-        </div>
-        <div class="menu-card">
-            <img src="assets/letter-biscuit.png" alt="">
-            <p>Raspberry jam letter biscuit</p>
-        </div>
-    </div>
-</div>
-</div> */

@@ -92,7 +92,7 @@ th, tr td:first-child {
     text-align: center;
 }
 
-#menu h2 {
+h2 {
     font-size: 1rem;
     text-align: left;
     margin: 0.5rem 0 1rem;
@@ -108,6 +108,7 @@ th, tr td:first-child {
     padding: 1rem 2rem;
     margin: 2rem auto;
     max-width: fit-content;
+    border-radius: 0.4rem;
 }
 
 .menu-section > div {
@@ -124,4 +125,39 @@ th, tr td:first-child {
 .menu-card img {
     width: 100%;
     cursor: pointer;
+}
+
+/* About page styling */
+
+#about {
+    text-align: center;
+    margin: auto;
+    max-width: fit-content;
+}
+
+.image-text {
+    display: flex;
+    gap: 4rem;
+    margin: 2rem auto;
+}
+
+.image-text img {
+    flex: 0;
+    max-width: 16rem;
+    height: 100%;
+}
+
+.image-text div {
+    text-align: left;
+    width: 20rem;
+}
+
+.image-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.image-text p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
 }

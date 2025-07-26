@@ -1,6 +1,7 @@
 import "./styles.css";
 import setHomePage from "./home.js";
 import setMenuPage from "./menu.js";
+import setAboutPage from "./about.js";
 
 // Display home page upon initial load
 setHomePage();
@@ -24,7 +25,7 @@ function togglePage(e) {
             setMenuPage();
             break;
         case "About":
-            // setAboutPage();
+            setAboutPage();
             break;
     }
 }
