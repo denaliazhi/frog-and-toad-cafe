@@ -11,11 +11,15 @@ const nav = document.querySelector("nav");
 nav.addEventListener("click", togglePage);
 
 function togglePage(e) {
+    const clicked = e.target;
+
+    // Parent container was clicked, not child button
+    if (e.target === e.currentTarget) return;
+
     // Clear existing content
     const child = content.querySelector("div");
     content.removeChild(child);
-
-    const clicked = e.target;
+    
     // Set new content
     switch(clicked.textContent) {
         case "Home":
