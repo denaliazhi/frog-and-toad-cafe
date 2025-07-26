@@ -5,7 +5,7 @@
 }
 
 body {
-    background: url("assets/cafe-background.png") no-repeat center top;
+    background: url("assets/cafe-background.png") no-repeat center top / cover;
     font-family: 'Courier New', Courier, monospace;
     color: white;
     display: flex;
