@@ -1,14 +1,13 @@
 // This code generates DOM elements for the menu page
 
-import { setTitle, setSubtitle } from "./components";
+import { setTitle, setSubtitle, setBody, setImage } from "./components";
 const images = require.context("./assets", false, /\.(png|jpe?g|svg)$/);
 
 function setMenuSection(title, obj) {
     const section = document.createElement("div");
     section.classList.add("menu-section");
     
-    const sectionTitle = document.createElement("h2");
-    sectionTitle.textContent = title;
+    const sectionTitle = setSubtitle(title);
 
     const menuItems = document.createElement("div");
     for (let key in obj) {
@@ -24,13 +23,10 @@ function setMenuCard(arr) {
     const card = document.createElement("div");
     card.classList.add("menu-card");
 
-    const image = document.createElement("img");
-    image.src = images(`./${arr[0]}`);
-    console.log(image.src);
+    const image = setImage(images(`./${arr[0]}`));
     image.alt = arr[1];
 
-    const caption = document.createElement("p");
-    caption.textContent = arr[1];
+    const caption = setBody(arr[1]);
 
     card.append(image, caption);
     return card;
@@ -45,7 +41,7 @@ function setMenuPage() {
 
     // Create elements for menu page
     const title = setTitle("Menu");
-    const subtitle = setSubtitle("There's no rush here. Sip, snack, and stay awhile.");
+    const subtitle = setBody("There's no rush here. Sip, snack, and stay awhile.");
 
     const drinks = {
         1: ["cappuccino.png", "Frog's hopping cappuccino"],

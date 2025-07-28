@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('./GeistMono-VariableFont_wght.ttf') format('truetype');
+  }
+
 body {
     background: url("assets/cafe-background.png") no-repeat center top / cover;
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
+    font-family: 'Geist Mono', 'Courier New', Courier, monospace;
+    color: #e8d3c2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,26 +33,88 @@ nav button {
     margin-left: 1rem;
     border: none;
     background: none;
-    color: white;
+    color: #e8d3c2;
     cursor: pointer;
 }
-
 
 footer {
     margin-top: 5rem;
     padding: 1rem 2rem;
-    background-color: #46382E;
+    background-color: #5D4B3D;
     display: flex;
     justify-content: space-between;
     font-size: 0.75rem;
 }
 
+.two-col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    margin: 2rem auto;
+}
+
 /* Home page styling */
+
+#home h1 {
+    margin: auto;
+    font-size: 2.5rem;
+}
+
+#home h2 {
+    font-weight: normal;
+    margin: 1rem 0 4rem;
+}
+
+#home button {
+    border: none;
+    border-radius: 0.3rem;
+    background: #606749;
+    color: #e8d3c2;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;  
+    letter-spacing: 0.025rem;  
+    width: 22rem;
+}
+
+#home div:first-child {
+    text-align: left;
+    width: 23rem;
+}
+
+#visit {
+    border: 2px solid #5D4B3D;
+    border-radius: 0.75rem;
+    font-size: 0.8rem;
+}
+
+#visit p {
+    text-align: center;
+}
+
+#visit p:first-child {
+    background-color: #5D4B3D;
+    font-weight: bold;
+    padding: 0.4rem 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+#visit p:nth-child(2) {
+    padding: 1rem;
+    margin: 0 1rem;
+}
+
+hr {
+    margin: auto;
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
 
 table {
     border-collapse: collapse;
-    font-size: 0.9rem;
-    margin-top: 1rem;
+    font-size: 0.8rem;
+    margin: 1rem auto;
 }
 
 th, td {
@@ -63,38 +130,16 @@ th, tr td:first-child {
     padding-right: 1.5rem;
 }
 
-#home {
-    display: flex;
-    flex-direction: column;
-    width: 20rem;
-    gap: 1rem;
-    margin-left: auto;
-    margin-right: 15%;
-}
-
-#home h1 {
-    margin: 5rem auto;
-}
-
-#home button {
-    border: none;
-    border-radius: 0.3rem;
-    background: #606749;
-    color: white;
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;  
-    letter-spacing: 0.025rem;  
-}
-
 /* Menu page styling */
 
 #menu {
     text-align: center;
+    margin: 0 1rem;
 }
 
-h2 {
-    font-size: 1rem;
+#menu h2 {
     text-align: left;
+    font-size: 1rem;
     margin: 0.5rem 0 1rem;
 }
 
@@ -104,7 +149,7 @@ h2 {
 }
 
 .menu-section {
-    background-color: rgba(93, 77, 65, .85);
+    background-color: rgba(93, 75, 61, .75);
     padding: 1rem 2rem;
     margin: 2rem auto;
     max-width: fit-content;
@@ -135,29 +180,23 @@ h2 {
     max-width: fit-content;
 }
 
-.image-text {
-    display: flex;
-    gap: 4rem;
-    margin: 2rem auto;
-}
-
-.image-text img {
-    flex: 0;
-    max-width: 16rem;
-    height: 100%;
-}
-
-.image-text div {
+#about h2 {
     text-align: left;
-    width: 20rem;
-}
-
-.image-text h2 {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
-.image-text p {
+#about .two-col img {
+    max-width: 16rem;
+    height: 100%;
+}
+
+#about .two-col div {
+    text-align: left;
+    width: 20rem;
+}
+
+#about .two-col p {
     margin-top: 1rem;
     font-size: 0.9rem;
 }

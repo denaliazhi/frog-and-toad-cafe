@@ -5,33 +5,35 @@ function setTitle(text) {
 }
 
 function setSubtitle(text) {
-    const subtitle = document.createElement("p");
+    const subtitle = document.createElement("h2");
     subtitle.textContent = text;
     return subtitle;
 }
 
-function setImageText(obj) {
-    const container = document.createElement("div");
-    container.classList.add("image-text");
+function setBody(text) {
+    const body = document.createElement("p");
+    body.textContent = text;
+    return body;
+}
 
+function setImage(source, altText) {
     const image = document.createElement("img");
-    image.src = obj["image"];
-    image.alt = obj["alt"];
+    image.src = source;
+    image.alt = altText;
+    return image;
+}
 
-    const text = document.createElement("div");
-
-    const heading = document.createElement("h2");
-    heading.textContent = obj["heading"];
-    text.appendChild(heading);
-
-    for (let item of obj["body"]) {
-        const line = document.createElement("p");
-        line.textContent = item;
-        text.appendChild(line);
-    }
-
-    container.append(image, text);
+function setTwoCol(first, second) {
+    const container = document.createElement("div");
+    container.classList.add("two-col");
+    container.append(first, second);
     return container;
 }
 
-export {setTitle, setSubtitle, setImageText};
+function setButton(text) {
+    const button = document.createElement("button");
+    button.textContent = text;
+    return button;
+}
+
+export {setTitle, setSubtitle, setImage, setBody, setTwoCol, setButton,};

@@ -1,17 +1,17 @@
 // This code generates DOM elements for the home page
 
-function setHeroText(text) {
-    const heroText = document.createElement("h1");
-    heroText.textContent = text;
-    return heroText;
-}
+import {setButton, setTitle, setSubtitle, setBody, setTwoCol} from "./components";
 
-function setButton(text) {
-    const button = document.createElement("button");
-    button.textContent = text;
-    return button;
-}
 
+function setVisit(address, hours) {
+    const visit = document.createElement("div");
+    const heading = setBody("Visit us");
+    const addr = setBody(address);
+    const hr = document.createElement("hr");
+    visit.append(heading, addr, hr, hours);
+    visit.id = "visit";
+    return visit;
+}
 function setHoursTable(obj) {
     const hoursTable = document.createElement("table");
     let first = true;
@@ -37,27 +37,30 @@ function setHoursTable(obj) {
 function setHomePage() {
     const content = document.querySelector("#content");
 
-    // Create a container to hold elements
-    const home = document.createElement("div");
-    home.id = "home";
+    // Create elements for left side of page
+    const leftCol = document.createElement("div");
+    const title = setTitle("Your Home Away From Home");
+    const subtitle = setSubtitle("Come for a cozy cup and the very best of friends.");
+    const button = setButton("Browse Our Menu of the Month");
+    leftCol.append(title, subtitle, button);
 
-    // Create elements for home page
-    const heroText = setHeroText("Come for a cozy cup and the very best of friends.");
-    const button = setButton("Visit us: 12 Fern Lane, London WC2R 1BH");
-
+    // Create elements for right side of page
+    const address = "12 Fern Lane, London WC2R 1BH";
     const hours = {
-        Monday: "7:00am - 5:00pm",
-        Tuesday: "7:00am - 5:00pm",
-        Wednesday: "7:00am - 5:00pm",
-        Thursday: "7:00am - 5:00pm",
-        Friday: "7:00am - 9:00pm",
-        Saturday: "9:00am - 9:00pm",
+        Monday: "7am - 5pm",
+        Tuesday: "7am - 5pm",
+        Wednesday: "7am - 5pm",
+        Thursday: "7am - 5pm",
+        Friday: "7am - 9pm",
+        Saturday: "9am - 9pm",
         Sunday: "Closed",
     }
     const hoursTable = setHoursTable(hours);
+    const rightCol = setVisit(address, hoursTable);
 
-    // Add elements to container
-    home.append(heroText, button, hoursTable);
+    // Create a container to hold elements
+    const home = setTwoCol(leftCol, rightCol);
+    home.id = "home";
 
     // Show container as content on page
     content.appendChild(home);
